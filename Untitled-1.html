@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七夕快乐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="heart"></div>
+        <h1>永远爱娜宝</h1>
+        <img src="nn.jpg" alt="女朋友的照片" class="photo">
+        <p>宝宝，这是我为你特别制作的网页，希望它能像阳光一样温暖你的心。</p>
+        <button onclick="showMessage()">点击这里查看更多</button>
+        <p id="hiddenMessage" style="display:none;">星河流转，也一直喜欢你。</p>
+        <!-- 添加音乐播放的部分 -->
+    <button id="playMusicBtn">播放音乐</button>
+    <audio id="backgroundMusic" src="bgm.mp3" type="audio/mpeg" preload="auto" style="display:none;"></audio>
+    </div>
+
+    <script src="script.js">
+        // 添加音乐播放的逻辑
+        var playMusicBtn = document.getElementById('playMusicBtn');
+        var backgroundMusic = document.getElementById('backgroundMusic');
+
+        playMusicBtn.addEventListener('click', function() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                playMusicBtn.textContent = '暂停音乐';
+            } else {
+                backgroundMusic.pause();
+                playMusicBtn.textContent = '播放音乐';
+            }
+        });
+    </script>
+</body>
+</html>
+
